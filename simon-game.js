@@ -79,11 +79,12 @@ function gameOver() {
     document.getElementById("level-title").textContent = "Game Over! Press any key to restart.";
     playSound("wrong");
 
-    // Change background to red and reset after 1 second
-    document.body.classList.add("game-over");
+    // Change background to red
+    document.body.style.backgroundColor = "red";
+
     setTimeout(() => {
-        document.body.classList.remove("game-over");
-    }, 1000);
+        document.body.style.backgroundColor = "";
+    }, 1500);
 
     // Add event listener to restart game
     document.addEventListener("keydown", restartGame, { once: true }); // Use `{ once: true }` to ensure listener runs only once
